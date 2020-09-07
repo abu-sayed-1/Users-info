@@ -5,7 +5,6 @@ import CommentsChild from '../CommentsChild/CommentsChild';
 const Comments = () => {
     const {parsonId} = useParams()
     const [comments,setComments] = useState([])
-    console.log(comments)
 
     useEffect(() => {
         fetch(`http://jsonplaceholder.typicode.com/comments/?postId=${parsonId}`)
@@ -14,7 +13,6 @@ const Comments = () => {
     },[])
     return (
         <div>
-           <h4>This is Comments</h4> 
            {
                comments.map(comments => <CommentsChild comments={comments}></CommentsChild>)
            }

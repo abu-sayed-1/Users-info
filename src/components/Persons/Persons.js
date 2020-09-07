@@ -12,6 +12,7 @@ const useStyles = makeStyles((theme) =>({
     robot: {
       maxWidth: 345,
     },
+    
     cardActionArea:{
       width:'100%',
     },

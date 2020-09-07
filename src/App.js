@@ -1,19 +1,25 @@
-import React from 'react';
+import React, { createContext } from 'react';
 import './App.css';
 import Home from './components/Home/Home';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 import PageNotFound from './components/PageNotFound/PageNotFound';
 import ParsonInfo from './components/ParsonInfo/ParsonInfo';
+// import fakeData from './components/data.json';
+
+// export const ImagesContext = createContext();
+
 function App() {
-  // http://jsonplaceholder.typicode.com/comments/?postId=9
-  //http://jsonplaceholder.typicode.com/posts/15
+  // const img = fakeData;
+  // const images = img.map(imgs => imgs.img);
+//  console.log(images);
+
   return (
     <div style={{background:'lightBlue',margin:0,padding:'10px'}}>
+    {/* <ImagesContext.Provider value={{images}}> */}
       <Router>
         <Switch>
           <Route path="/home">
@@ -30,6 +36,8 @@ function App() {
           </Route>
         </Switch>
       </Router>
+   {/* </ImagesContext.Provider> */}
+
     </div>
   );
 }

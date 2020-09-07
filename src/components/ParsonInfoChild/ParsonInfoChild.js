@@ -13,11 +13,16 @@ import {
     robot: {
       maxWidth: 345,
     },
+    container:{
+      marginLeft:'30px'
+      // justifyContent:'center',
+      // alignContent:'center'
+     },
     cardActionArea:{
       width:'100%',
     },
     blog:{
-        color:'blue'
+        color:'purple'
     },
     
   }));

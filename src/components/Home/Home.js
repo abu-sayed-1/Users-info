@@ -10,7 +10,6 @@ const Home = () => {
     },[])
     return (
         <div>
-            <h1>This is Home</h1>
             {
                 persons.map(persons => <Persons persons={persons}  ></Persons>)
             }

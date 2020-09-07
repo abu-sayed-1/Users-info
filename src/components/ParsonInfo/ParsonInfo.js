@@ -5,7 +5,6 @@ import Comments from '../Comments/Comments';
 const ParsonInfo = () => {
     return (
         <div>
-           <h4>This is ParsonInfo</h4>
             <ParsonInfoChild></ParsonInfoChild>
             <Comments></Comments>
         </div>
