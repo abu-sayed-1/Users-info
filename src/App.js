@@ -13,7 +13,7 @@ function App() {
   // http://jsonplaceholder.typicode.com/comments/?postId=9
   //http://jsonplaceholder.typicode.com/posts/15
   return (
-    <div>
+    <div style={{background:'lightBlue',margin:0,padding:'10px'}}>
       <Router>
         <Switch>
           <Route path="/home">
