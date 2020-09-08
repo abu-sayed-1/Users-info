@@ -1,4 +1,4 @@
-import React from 'react';
+import React  from 'react';
 import './App.css';
 import Home from './components/Home/Home';
 import {
@@ -7,46 +7,29 @@ import {
   Route,
 } from "react-router-dom";
 import PageNotFound from './components/PageNotFound/PageNotFound';
-import ParsonInfo from './components/ParsonInfo/ParsonInfo';
-// import Images from './components/Images/Images';
-import fakeData from './components/data.json';
+import PersonsInfo from './components/PersonsInfo/PersonsInfo';
 
-// export const ImagesContext = createContext();
-
-function App() {
-  const img = fakeData;
-  const images = img.map(images => images.img);
-//  console.log(images);
-//  console.log(img);
+function App() { 
 
   return (
-    <div>
-      {
-       images.map(img => <img src={img} alt=""/>)
-      }
     
-
       <Router>
-      {/* <Images></Images> */}
-        <Switch>
-          <Route path="/home">
-           <Home /> 
-          </Route>
-           <Route exact path="/">
-            <Home />
-           </Route>
-           <Route path="/parson/:parsonId">
-            {/* <ImagesContext.Provider value={[img]}> */}
-             <ParsonInfo />
-             {/* </ImagesContext.Provider> */}
-           </Route>
-           <Route path="*">
-           <PageNotFound />
-          </Route>
-        </Switch>
-      </Router>
+       <Switch>
+        <Route path="/home">
+         <Home /> 
+         </Route>
+         <Route exact path="/">
+         <Home />
+        </Route>
+        <Route path="/parson/:parsonId">
+        <PersonsInfo />
+       </Route>
+       <Route path="*">
+      <PageNotFound />
+     </Route>
+   </Switch>
+  </Router>
 
-    </div>
   );
 }
 
