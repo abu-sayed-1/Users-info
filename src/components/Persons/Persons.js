@@ -5,37 +5,50 @@ import {
   Container,Card ,CardActionArea,CardActions,
   CardContent,CardMedia,Button,Typography,Grid
 } from '@material-ui/core';
+import './Parson.css'
 
 const useStyles = makeStyles((theme) =>({
-
-
     robot: {
-      maxWidth: 345,
+      display:'inline-block',
+      width:'30%',
+      backgroundColor:'rgba(235, 25, 10, 0.1)',
+      margin:'1%',
+      height:'350px'
     },
-    
     cardActionArea:{
       width:'100%',
     },
+
     blog:{
-        color:'blue'
+        color:'rgba(158, 11, 158, 0.5)'
     },
-    
+
+    title:{
+     color:'rgba(238, 70, 20, 0.6)'
+    },
+
+    mainContainer:{
+      display:'inline-block',
+      margin:'8px',
+    },
+
+    learnBtn:{
+      color:'rgba(131, 24, 71, 0.6)'
+    },
+
   }));
 
 
 const Persons = (props) => {
-    const {title,body,id} = props.persons;
+      const {title,body,id} = props.persons;
 
-    const history = useHistory()
-    const handleClick = (parsonHandle) => {
-          history.push(`/parson/${parsonHandle}`)
-    }
-     const classes = useStyles();
+      const history = useHistory()
+      const handleClick = (parsonHandle) => {
+            history.push(`/parson/${parsonHandle}`)
+      }
+      const classes = useStyles();
 
     return (
-    <Container  className={classes.container}>
-    <Grid container spacing={3}>
-        <Grid item xs={12} sm={6} md={4}>
         <Card className={classes.robot}>
       <CardActionArea className={classes.cardActionArea}>
         <CardMedia
@@ -46,30 +59,21 @@ const Persons = (props) => {
           title="Contemplative Reptile"
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
-          Title:{title}
+          <Typography className={classes.title} gutterBottom variant="h5" component="h2">
+          {title}
           </Typography>
           <Typography variant="body2" className={classes.blog} component="p">
-          {body}
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-      <CardActions>
-        <Button size="small" color="primary">
-          Share
-        </Button>
-        <Button onClick={() => handleClick(id)} size="small" color="primary">
-          Learn More
-        </Button>
-      </CardActions>
-    </Card>
-        </Grid>
-    </Grid>
- </Container>
+              {body}
+              </Typography>
+            </CardContent>
+          </CardActionArea>
+          <CardActions>
+            <Button onClick={() => handleClick(id)} size="small" color="secondary" className={classes.learnBtn}>
+              Learn More
+            </Button>
+          </CardActions>
+        </Card>
+        );
+    };
 
-
- 
-    );
-};
-
-export default Persons;
+    export default Persons;
