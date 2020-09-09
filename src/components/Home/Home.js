@@ -9,7 +9,7 @@ const Home = () => {
         .then(data =>setPerson(data));
        },[]);
          
-      return (
+    return (
          
          <div className='container' style={{marginLeft:'11px'}}>
               {

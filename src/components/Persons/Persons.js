@@ -34,8 +34,8 @@ const useStyles = makeStyles((theme) =>({
       const {title,body,id} = props.persons;
 
       const history = useHistory()
-      const handleClick = (parsonHandle) => {
-             history.push(`/parson/${parsonHandle}`);
+      const handleClick = (personHandle) => {
+             history.push(`/person/${personHandle}`);
        }
 
       const classes = useStyles();

@@ -26,14 +26,14 @@ import {
 
 const PersonsInfoChild = () => {
   const classes = useStyles();
-     const {parsonId} = useParams();
-     const [parsonInfo,setParsonInfo] = useState({});
-     const {title,body} =parsonInfo;
+     const {personId} = useParams();
+     const [personInfo,setPersonInfo] = useState({});
+     const {title,body} =personInfo;
 
   useEffect(() => {
-     fetch(`https://jsonplaceholder.typicode.com/posts/${parsonId}`)
+     fetch(`https://jsonplaceholder.typicode.com/posts/${personId}`)
      .then(res => res.json())
-     .then(data => setParsonInfo(data));
+     .then(data => setPersonInfo(data));
       },[]);
 
     return (

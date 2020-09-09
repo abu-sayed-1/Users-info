@@ -3,10 +3,10 @@ import { useParams } from 'react-router-dom';
 import CommentsChild from '../CommentsChild/CommentsChild';
 
 const Comments = () => {
-    const {parsonId} = useParams();
+    const {personId} = useParams();
     const [comments,setComments] = useState([]);
         useEffect(() => {
-         fetch(`https://jsonplaceholder.typicode.com/comments/?postId=${parsonId}`)
+         fetch(`https://jsonplaceholder.typicode.com/comments/?postId=${personId}`)
          .then(res => res.json())
          .then(data => setComments(data));
 
